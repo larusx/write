@@ -1,0 +1,5 @@
+libraries:
+- name: "django"
+  version: "1.4"
+handle:
+- compress:  if ( out_header["Content-type"] ~ "text/html" ) compress

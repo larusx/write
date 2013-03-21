@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>随手记，随身盘，随时分享</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+<script src="static/js/jquery-1.9.1.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+  <a href="https://github.com/larusx/"><img style="position: absolute; top: 0; right: 0; border: 0;"src="static/pic/joinus.png" alt="Join us on GitHub" /></a>
+    <h1 class="text-center">
+        随手记，随身盘，随时分享
+    </h1>
+
+    <form action='/text' method='POST' class='text-center' >
+    <textarea name='mem' rows='1' placeholder='题目'></textarea></br>
+    <center>
+    <textarea name='txt' rows='3' placeholder='内容'></textarea>
+    </center>
+    <center>
+    <input type='submit' value='记上' class='btn btn-large btn-primary'>
+    </form>
+    </center>
+
+    
+    
+    <div class="control-group text-center">
+    <label class="control-label" for="inputIcon"><a href="http://weibo.com/larus">@ME</a></label>
+    <div class="controls">
+    <div class="input-prepend">
+    <span class="add-on"><i class="icon-envelope"></i></span>
+    <input class="span2" id="inputIcon" type="text" value='larusx@163.com'>
+    </div>
+    </div>
+    </div>
+    <center>
+        {{curl}}
+    </center>
+    <div class="container">
+<p class="lead">
+随手上传本地文件,5MB以下
+</p>
+
+
+  </div>
+        <div class="container">
+        <table class="table table-striped table-bordered">
+        <tbody>
+        {% for k,v in store%}
+          <tr><td ><a href="{{v}}">{{k}}</a></td></tr>
+        {% endfor %}
+          </tbody>
+        </table>
+  </div>
+ 
+<center>
+<form enctype="multipart/form-data" action="/storage" method="POST">  
+<div >
+上传文件:
+<input type="file" name="file1" >  
+<input type="submit" value="确定" class='btn btn-inverse'>  
+</div>
+</form>  
+</center>
+
+<center>
+<a href="http://posix.sinaapp.com/?p=174">建议，意见，留言板@larus</a>
+</center>
+
+</body>
+</html>
+
